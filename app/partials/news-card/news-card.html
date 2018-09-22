@@ -1,0 +1,14 @@
+<div class="news-card">
+    <img ng-src="{{news.urlToImage}}" alt="news-image" class="img-fluid" />
+    <div class="card-img-overlay">
+        <span class="badge badge-pill badge-danger">News</span>
+    </div>
+    <div class="card-body">
+        <div class="news-title">
+            <h2 class=" title-small">
+                <a ng-click="showNewsdetail(news)">{{news.title}}</a>
+            </h2>
+        </div>
+        <p class="card-text"><small class="text-time"><em>{{news.publishedAt}}</em></small></p>
+    </div>
+</div>

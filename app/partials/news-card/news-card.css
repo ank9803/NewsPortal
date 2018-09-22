@@ -1,0 +1,59 @@
+.news-card{
+    margin-bottom: 20px;
+}
+.img-fluid{
+    max-width: 100%;
+    max-height: 200px;
+}
+.news-card .card-img-overlay {
+    padding: 0;
+    top: 3px;
+    left: 7px;
+    height: 20%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+.badge-pill {
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 10rem;
+}
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.title-small {
+    color: #141517;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    margin: 6px 0 0;
+}
+.card-text:last-child {
+    margin-bottom: 0;
+}
+.card-text {
+    margin: 0;
+}
+.text-time {
+    color: #ff0000;
+    font-weight: 600;
+}
