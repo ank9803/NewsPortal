@@ -7,6 +7,7 @@ function HomeInnerService($http, ApiConstant) {
     var homeInnerService = {};
     //function declarations
     homeInnerService.getNews = getNews;
+    homeInnerService.filterNewsByKeyword = filterNewsByKeyword;
 
     //function definition
     function getNews(countryCode, category) {
@@ -14,8 +15,15 @@ function HomeInnerService($http, ApiConstant) {
         category = category ? category : 'business';
         return $http({
             method: 'GET',
-            url: ApiConstant.API_URL.url + '?country=' + countryCode +
+            url: ApiConstant.API_URL.topHeadlines + '?country=' + countryCode +
                 '&category=' + category + '&apiKey=' + ApiConstant.API_URL.key
+        });
+    }
+    function filterNewsByKeyword(keyword) {
+        return $http({
+            method: 'GET',
+            url: ApiConstant.API_URL.everything + '?q=' + keyword +
+                '&apiKey=' + ApiConstant.API_URL.key
         });
     }
     return homeInnerService;

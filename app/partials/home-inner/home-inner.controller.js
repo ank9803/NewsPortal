@@ -9,6 +9,7 @@ function HomeInnerController($scope, $state, AppService, HomeInnerService, $root
    //method declarations
    $scope.init = init;
    $scope.getNews = getNews;
+   $scope.filterNews = filterNews;
    //method definition
    function getNews() {
        $rootScope.loadingImage = true;
@@ -22,7 +23,26 @@ function HomeInnerController($scope, $state, AppService, HomeInnerService, $root
               console.log('Some error has occurred', error);
            });
    }
+   function filterNews(e) {
+       e.preventDefault();
+       $rootScope.loadingImage = true;
+       HomeInnerService.filterNewsByKeyword($scope.searchText)
+           .then(function (response) {
+               if(response.data.totalResults === 0){
+                   $scope.noResult = true;
+               } else {
+                   $scope.noResult = false;
+                   $scope.newsList = response.data.articles;
+               }
+               $rootScope.loadingImage = false;
+           })
+           .catch(function (error) {
+               $rootScope.loadingImage = false;
+               console.log('Some error has occurred', error);
+           });
+   }
    function init() {
+       $scope.searchText = '';
         $scope.getNews();
    }
     $scope.init();
