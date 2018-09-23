@@ -57,4 +57,5 @@ angular.module('newsApp')
                     }]
                 }
             });
+        $locationProvider.html5Mode(true);
     });
